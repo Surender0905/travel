@@ -4,6 +4,7 @@ import 'dotenv/config';
 import mongoose from 'mongoose';
 import userRouter from './routes/user';
 import authRouter from './routes/auth';
+import hotelRoutes from './routes/hotels';
 import myHotelRoutes from './routes/my-hotels';
 import cookieParser from 'cookie-parser';
 import path from 'path';
@@ -34,6 +35,7 @@ app.use(express.static(path.join(__dirname, '../../frontend/dist')));
 app.use('/api/auth', authRouter);
 app.use('/api/users', userRouter);
 app.use('/api/my-hotels', myHotelRoutes);
+app.use('/api/hotels', hotelRoutes);
 
 app.get('*', (req: Request, res: Response) => {
   res.sendFile(path.join(__dirname, '../../frontend/dist/index.html'));
