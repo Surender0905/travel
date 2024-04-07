@@ -17,6 +17,7 @@ const SearchBar = () => {
 
   const handleSubmit = (event: FormEvent) => {
     event.preventDefault();
+    console.log('test');
     search.saveSearchValues(
       destination,
       checkIn,
